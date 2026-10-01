@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/09/18 17:49:03 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:55:28 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Frees a single node after applying the given del function to its content.
 
-int	main(int ac, char **av)
+External:
+    free();
+
+* @param t_list *lst 
+* @param void (*del)(void *) 
+*/
+
+#include "../libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int		fd;
-	char	*s;
-
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

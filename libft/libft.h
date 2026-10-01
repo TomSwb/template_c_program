@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 16:41:24 by tomswb            #+#    #+#             */
-/*   Updated: 2026/09/18 18:32:56 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/01 23:56:51 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,20 @@ and a struct.
 // macros
 # include <limits.h>
 # include <stdint.h>
-// read / write / close 
+
+// read() / write() / close() 
 # include <unistd.h> 
+
 // size_t
 # include <stddef.h>
+
 // malloc 
 # include <stdlib.h>
+
+// gnl & ft_printf
+# include "./get_next_line/get_next_line.h"
+# include "./ft_printf/ft_printf.h"
+
 
 /***** Struct *****/
 

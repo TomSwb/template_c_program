@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/08/28 21:38:55 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:55:15 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Fills the first n bytes of the given memory area with '\0'.
 
-int	main(int ac, char **av)
+* @param void *b 
+* @param size_t len 
+*/
+
+#include "../libft.h"
+
+void	ft_bzero(void *b, size_t len)
 {
-	int		fd;
-	char	*s;
+	unsigned char	*ptr;
+	size_t			i;
 
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	ptr = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 }

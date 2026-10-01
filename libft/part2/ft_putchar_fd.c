@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/09/13 11:08:56 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:53:40 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Writes the given char 'c' inside the given file 'fd'.
 
-int	main(int ac, char **av)
+External:
+	write();
+
+* @param char c 
+* @param int fd 
+*/
+
+#include "../libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	int		fd;
-	char	*s;
-
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	write(fd, &c, 1);
 }

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/09/18 17:58:34 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:55:29 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Iterates through each node's content in 'lst', applying the changes 
+from the given function 'f'.
 
-int	main(int ac, char **av)
+* @param t_list *lst 
+* @param void (*f)(void*) 
+*/
+
+#include "../libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		fd;
-	char	*s;
-
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/09/13 11:56:10 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:54:13 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Iterates by address through each char inside '*s', applying the given function.
 
-int	main(int ac, char **av)
+* @param char *s 
+* @param void (*f)(unsigned int, char*) 
+*/
+
+#include "../libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		fd;
-	char	*s;
+	unsigned int	i;
 
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

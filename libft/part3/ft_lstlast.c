@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/09/18 18:04:00 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:55:31 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Returns a pointer to the last node of list 'lst'.
 
-int	main(int ac, char **av)
+* @param t_list *lst 
+* @return t_list* 
+*/
+
+#include "../libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		fd;
-	char	*s;
-
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	while (lst && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:17:55 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:58 by tomswb           ###   ########.fr       */
+/*   Created: 2026/08/29 17:48:37 by tomswb            #+#    #+#             */
+/*   Updated: 2026/10/01 23:54:51 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <fcntl.h>
+/**
+* @brief 
+Returns the given 's' array filled with the 'c' char up to 'n' bytes.
 
-int	main(int ac, char **av)
+* @param void *s 
+* @param int c 
+* @param size_t n 
+* @return void* 
+*/
+
+#include "../libft.h"
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int		fd;
-	char	*s;
+	unsigned char	*u_s;
+	unsigned char	u_c;
 
-	(void) ac;
-	fd = open(av[1], O_RDONLY);
-	s = get_next_line(fd);
-	ft_printf("Test this: %s = %d len\n", s, ft_strlen(s));
-	close(fd);
+	u_c = (unsigned char)c;
+	u_s = (unsigned char *)s;
+	while (n > 0)
+	{
+		*u_s = u_c;
+		u_s++;
+		n--;
+	}
+	return (s);
 }
