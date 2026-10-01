@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 16:41:24 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:56:51 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/02 00:05:36 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ and a struct.
 // gnl & ft_printf
 # include "./get_next_line/get_next_line.h"
 # include "./ft_printf/ft_printf.h"
-
 
 /***** Struct *****/
 

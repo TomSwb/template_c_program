@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 12:03:40 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:54:20 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/02 00:06:05 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ External:
 */
 
 #include "../libft.h"
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			len;

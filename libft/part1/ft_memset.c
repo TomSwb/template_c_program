@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 17:48:37 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:54:51 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/02 00:05:52 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Returns the given 's' array filled with the 'c' char up to 'n' bytes.
 */
 
 #include "../libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*u_s;
