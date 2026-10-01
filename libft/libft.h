@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 16:41:24 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/02 00:05:36 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/02 00:07:10 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ void			ft_putnbr_fd(int n, int fd);
 /** Part 3 **/
 
 t_list			*ft_lstnew(void *content);
-void			ft_lstadd_front(t_list **lst, t_list *new);
-void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstadd_front(t_list **lst, t_list *node);
+void			ft_lstadd_back(t_list **lst, t_list *node);
 
 unsigned int	ft_lstsize(t_list *lst);
 

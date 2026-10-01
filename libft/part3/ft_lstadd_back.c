@@ -6,7 +6,7 @@
 /*   By: tomswb <tomswb@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 17:02:06 by tomswb            #+#    #+#             */
-/*   Updated: 2026/10/01 23:55:21 by tomswb           ###   ########.fr       */
+/*   Updated: 2026/10/02 00:08:02 by tomswb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 Appends the given node 'new' to the end of 'lst'.
 
 * @param t_list **lst 
-* @param t_list *new 
+* @param t_list *node
 */
 
 #include "../libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *node)
 {
 	t_list	*ptr;
 
-	if (!lst || !new)
+	if (!lst || !node)
 		return ;
 	if (*lst == NULL)
 	{
-		*lst = new;
+		*lst = node;
 		return ;
 	}
 	ptr = *lst;
 	while (ptr && ptr->next != NULL)
 		ptr = ptr->next;
-	ptr->next = new;
+	ptr->next = node;
 }
